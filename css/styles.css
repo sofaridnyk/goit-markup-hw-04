@@ -117,6 +117,11 @@ a span {
 .hero-image {
   background-color: var(--primary-navyblue-color);
   padding: 188px 0;
+  background-image: url(../images/hero-bg/people-office.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 .hero-title {
   color: var(--primary-white-color);
