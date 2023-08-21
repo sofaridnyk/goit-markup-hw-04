@@ -79,12 +79,17 @@ button {
   margin-right: 40px;
   position: relative;
 }
+.studio-nav,
+.portfolio-nav {
+  color: var(--active-link-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
 .link-contacts:after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -1px;
   width: 100%;
   height: 4px;
   background-color: var(--active-link-color);
@@ -128,6 +133,7 @@ a span {
   letter-spacing: 0.02em;
   padding-top: 24px;
   padding-bottom: 24px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .link-address:hover,
 .link-address:focus {
@@ -142,7 +148,8 @@ a span {
     ),
     url(../images/hero-bg/people-office.jpg);
   background-size: cover;
-  background-position: top center;
+  background-repeat: no-repeat;
+  background-position: center;
   max-width: 1440px;
   margin: 0 auto;
 }
@@ -175,6 +182,7 @@ a span {
   margin-right: auto;
   border: none;
   border-radius: 4px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hero-button:hover,
 .hero-button:focus {
@@ -257,6 +265,10 @@ a span {
   padding: 12px 24px;
   border: 1px solid var(--secondary-accent-color);
   border-radius: 4px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .buttons:hover,
 .buttons:focus {
@@ -264,6 +276,8 @@ a span {
   color: var(--primary-white-color);
   border: 1px solid transparent;
   border-radius: 4px;
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 .subtitle {
   color: var(--primary-navyblue-color);
@@ -287,6 +301,8 @@ h3 {
 header {
   border-bottom: 1px solid #e7e9fc;
   background-color: var(--primary-white-color);
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 .header-container {
   display: flex;
@@ -329,6 +345,7 @@ header {
   padding-top: 24px;
   padding-bottom: 24px;
   margin-bottom: 8px;
+  height: 112px;
 }
 .list-section-one {
   width: calc((100% - 72px) / 4);
@@ -369,6 +386,9 @@ header {
     0px 1px 6px 0px rgba(46, 47, 66, 0.08);
   width: calc((100% - 48px) / 3);
 }
+.team-soc-media {
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 .team-icons {
   display: flex;
   justify-content: center;
@@ -387,14 +407,24 @@ header {
   margin: 0 auto;
   padding-top: 8px;
 }
-.team-icons {
+
+.links-team:hover,
+.links-team:focus {
+  background-color: var(--active-link-color);
+}
+.links-team {
+  width: 100%;
+  height: 100%;
   background-color: var(--primary-accent-color);
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 12px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.team-icons:hover,
-.team-icons:focus {
-  background-color: var(--active-link-color);
+.svg-team {
+  fill: var(--light-background-color);
 }
 .customers {
   padding-top: 120px;
@@ -402,21 +432,35 @@ header {
 }
 
 .customers-list {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 24px;
 }
+.cust-list {
+  height: 88px;
+}
 
-.customers-icon {
+.cust-links {
+  width: 100%;
+  height: 100%;
   border: 1px solid var(--lightslate);
   border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--lightslate);
   padding: 16px 32px;
-  fill: var(--lightslate);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.customers-icon:hover,
-.customers-icon:focus {
+.svg-cust {
+  fill: currentColor;
+}
+
+.cust-links:hover,
+.cust-links:focus {
   border: 1px solid var(--active-link-color);
-  fill: var(--active-link-color);
+  color: var(--active-link-color);
 }
 footer {
   padding: 100px 0;
@@ -427,6 +471,7 @@ footer {
 }
 .footer-container {
   display: flex;
+  align-items: baseline;
 }
 .logo-text {
   margin-right: 120px;
@@ -443,15 +488,28 @@ footer {
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.32px;
-  padding-bottom: 16px;
+  margin-bottom: 16px;
 }
-.footer-icons {
+.soc-med-footer-list {
+  height: 40px;
+}
+
+.links-footer {
+  width: 100%;
+  height: 100%;
   background-color: var(--primary-accent-color);
-  padding: 8px;
   border-radius: 50%;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.footer-icons:hover,
-.footer-icons:focus {
+.svg-footer {
+  fill: var(--light-background-color);
+}
+.links-footer:hover,
+.links-footer:focus {
   background-color: var(--green);
 }
 
@@ -542,7 +600,8 @@ footer {
   width: 100%;
   height: 100%;
   background-color: rgba(46, 47, 66, 0.4);
-  transition: opacity 250ms ease-in-out, visibility 250ms ease-in-out;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .backdrop.is-hidden {
   opacity: 0;
@@ -560,19 +619,38 @@ footer {
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
-  transition: transform 250ms ease-in 250ms, opacity 250ms ease-in 250ms;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .backdrop.is-hidden .modal {
   transform: translateX(-50%) translateY(-70%);
   opacity: 0;
 }
 .modal-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: var(--secondary-accent-color);
   border-radius: 50%;
-  stroke-width: 1px;
-  stroke: rgba(0, 0, 0, 0.1);
-  padding: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0;
   position: absolute;
   top: 24px;
   right: 24px;
+  width: 24px;
+  height: 24px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-button:hover,
+.modal-button:focus {
+  border: none;
+  background-color: var(--active-link-color);
+}
+.modal-button-icon {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-button-icon:hover,
+.modal-button-icon:focus {
+  fill: #ffffff;
 }
